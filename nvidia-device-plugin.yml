@@ -49,6 +49,9 @@ spec:
       - image: nvcr.io/nvidia/k8s-device-plugin:v0.9.0
         name: nvidia-device-plugin-ctr
         args: ["--fail-on-init-error=false"]
+        env:
+        - name: DP_DISABLE_HEALTHCHECKS
+          value: "xids"
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
